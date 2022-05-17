@@ -38,10 +38,10 @@ class MainActivity : AppCompatActivity() {
                     binding.progressbar1.visibility= View.INVISIBLE
                     binding.button1.isEnabled=true
                     val loginResponse=response.body()
-                    val intent=Intent(this@MainActivity,MainActivity2::class.java).apply {
-                        putExtra("token",loginResponse!!.token)
-                    }
-                    startActivity(intent)
+                    RetrofitClient.token=loginResponse!!.token
+                    startActivity(Intent(this@MainActivity,MainActivity2::class.java))
+
+
                     Toast.makeText(this@MainActivity,"Succes",Toast.LENGTH_SHORT).show()
                 }else{
                     binding.button1.isEnabled=true

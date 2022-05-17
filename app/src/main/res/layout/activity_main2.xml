@@ -5,32 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
-    <RelativeLayout
-        android:padding="10dp"
-        android:id="@+id/relativelay1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <EditText
-            android:padding="10dp"
-            android:background="@drawable/edittextbackground"
-            android:inputType="number"
-            android:layout_marginRight="10dp"
-            android:layout_centerVertical="true"
-            android:hint="Product id"
-            android:layout_toLeftOf="@id/button2"
-            android:id="@+id/edittext3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></EditText>
-        <Button
-            android:layout_centerVertical="true"
-            android:text="With id"
-            android:textAllCaps="false"
-            android:id="@+id/button2"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></Button>
-    </RelativeLayout>
+
 
     <ProgressBar
         android:visibility="invisible"
@@ -40,57 +15,9 @@
         android:layout_height="wrap_content"></ProgressBar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/relativelay1"
         android:id="@+id/recyclerview1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-    <androidx.cardview.widget.CardView
-        android:visibility="gone"
-        android:layout_below="@id/relativelay1"
-        app:cardCornerRadius="8dp"
-        app:cardUseCompatPadding="true"
-        app:cardElevation="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pr"
-                    android:id="@+id/imageview2"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"></ImageView>
-                <TextView
-                    android:id="@+id/textview2"
-                    android:singleLine="true"
-                    android:layout_margin="10dp"
-                    android:text="Galaxy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></TextView>
 
-            </LinearLayout>
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="8dp"
-                android:layout_alignParentEnd="true"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:padding="8dp"
-                    android:src="@drawable/ic_round_favorite_border_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></ImageView>
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

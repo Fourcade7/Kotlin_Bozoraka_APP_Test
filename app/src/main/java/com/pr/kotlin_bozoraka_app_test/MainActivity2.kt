@@ -1,7 +1,10 @@
 package com.pr.kotlin_bozoraka_app_test
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
@@ -14,7 +17,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity2 : AppCompatActivity() {
-    var token=""
+
     var arrayList=ArrayList<ProductsResponse>()
     lateinit var binding:ActivityMain2Binding
 
@@ -22,18 +25,16 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        token= intent.getStringExtra("token")!!
-        //Toast.makeText(this@MainActivity2,token, Toast.LENGTH_SHORT).show()
+
+
         getProducts()
         binding.progeressbar2.visibility=View.VISIBLE
 
-        binding.button2.setOnClickListener {
-            getproduct()
-        }
+
 
     }
     fun getProducts(){
-        val call=RetrofitClient.getApi().getProducts("Token $token")
+        val call=RetrofitClient.getApi().getProducts("Token ${RetrofitClient.token}")
         call.enqueue(object : Callback<List<ProductsResponse>> {
             override fun onResponse(
                 call: Call<List<ProductsResponse>>,
@@ -50,6 +51,7 @@ class MainActivity2 : AppCompatActivity() {
                    }
 
                }else{
+                   binding.progeressbar2.visibility=View.INVISIBLE
                    Toast.makeText(this@MainActivity2,"Error", Toast.LENGTH_SHORT).show()
 
                }
@@ -62,26 +64,18 @@ class MainActivity2 : AppCompatActivity() {
         })
     }
 
-    fun getproduct(){
-            val call=RetrofitClient.getApi().getProduct("Token $token",binding.edittext3.text.toString().toInt())
-            call.enqueue(object :Callback<ProductsResponse>{
-                override fun onResponse(
-                    call: Call<ProductsResponse>,
-                    response: Response<ProductsResponse>
-                ) {
-                    if (response.isSuccessful){
-                        Toast.makeText(this@MainActivity2,"SuccesFully", Toast.LENGTH_SHORT).show()
 
-                    }else{
-                        Toast.makeText(this@MainActivity2,"Error", Toast.LENGTH_SHORT).show()
 
-                    }
-                }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
-                override fun onFailure(call: Call<ProductsResponse>, t: Throwable) {
-                    Toast.makeText(this@MainActivity2,"Error $t", Toast.LENGTH_SHORT).show()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item1->startActivity(Intent(this@MainActivity2,MainActivity3::class.java))
 
-                }
-            })
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

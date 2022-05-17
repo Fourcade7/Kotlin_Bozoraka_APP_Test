@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/drawable/buttonbackground.xml" value="0.26197916666666665" />
         <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/drawable/edittextbackground.xml" value="0.26197916666666665" />
         <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/layout/activity_main.xml" value="0.23177083333333334" />
         <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/layout/activity_main2.xml" value="0.24583333333333332" />
+        <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/layout/activity_main3.xml" value="0.24583333333333332" />
+        <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/layout/activity_main4.xml" value="0.24583333333333332" />
         <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/layout/recyclerview_item.xml" value="0.24583333333333332" />
+        <entry key="..\:/Android Studio Projects/Kotlin_Bozoraka_APP_Test/app/src/main/res/menu/main.xml" value="0.24583333333333332" />
       </map>
     </option>
   </component>

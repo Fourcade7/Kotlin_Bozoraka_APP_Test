@@ -5,6 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
+    var token:String?=null
     fun getApi():Api{
         val retrofit=Retrofit.Builder()
             .baseUrl("https://valixon.bexatobot.uz/api/v1/")

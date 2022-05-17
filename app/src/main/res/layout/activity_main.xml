@@ -10,25 +10,28 @@
 
 
     <EditText
-        android:padding="10dp"
+        android:padding="7dp"
         android:background="@drawable/edittextbackground"
         android:hint="login"
         android:id="@+id/edittext1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
-    <EditText  android:padding="10dp"
+    <EditText  android:padding="7dp"
         android:background="@drawable/edittextbackground"
         android:layout_marginTop="10dp"
         android:hint="password"
         android:id="@+id/edittext2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></EditText>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="10dp"
+        android:background="@drawable/buttonbackground"
+        android:textColor="@color/white"
         android:id="@+id/button1"
         android:text="Login"
         android:textAllCaps="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></Button>
+        android:layout_height="wrap_content"></androidx.appcompat.widget.AppCompatButton>
     <ProgressBar
         android:visibility="invisible"
         android:id="@+id/progressbar1"

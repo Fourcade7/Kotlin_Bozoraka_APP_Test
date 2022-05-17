@@ -1,11 +1,13 @@
 package com.pr.kotlin_bozoraka_app_test.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.pr.kotlin_bozoraka_app_test.MainActivity4
 import com.pr.kotlin_bozoraka_app_test.R
 import com.pr.kotlin_bozoraka_app_test.Response.ProductsResponse
 import com.pr.kotlin_bozoraka_app_test.databinding.RecyclerviewItemBinding
@@ -26,6 +28,15 @@ class ProductsAdapter(
             textview1.setText(arraylist.get(position).name)
             Glide.with(context).load(arraylist.get(position).photoUrl).into(imageview1)
 
+        }
+        holder.binding.relativelay1.setOnClickListener {
+            val intent=Intent(context,MainActivity4::class.java).apply {
+                putExtra("image",arraylist.get(position).photoUrl)
+                putExtra("name",arraylist.get(position).name)
+                putExtra("description",arraylist.get(position).description)
+                putExtra("price",arraylist.get(position).price)
+            }
+            context.startActivity(intent)
         }
 
     }
